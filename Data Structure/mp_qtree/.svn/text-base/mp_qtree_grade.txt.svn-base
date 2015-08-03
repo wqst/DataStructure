@@ -1,0 +1,81 @@
+Monad Autograder
+Testing mp_qtree at 2014-07-20 23:38:54
+
+"Simplicity is the ultimate sophistication." ~ Leonardo da Vinci
+
+Setting up test environment...
+Compiling...
+================================================================
+src/quadtree.cpp:194:11: warning: returning reference to local temporary object [-Wreturn-stack-address]
+                        return epng::rgba_pixel();}
+                               ^~~~~~~~~~~~~~~~~~
+src/quadtree.cpp:207:9: warning: returning reference to local temporary object [-Wreturn-stack-address]
+        return epng::rgba_pixel();}
+               ^~~~~~~~~~~~~~~~~~
+2 warnings generated.
+src/quadtree.cpp:194:11: warning: returning reference to local temporary object [-Wreturn-stack-address]
+                        return epng::rgba_pixel();}
+                               ^~~~~~~~~~~~~~~~~~
+src/quadtree.cpp:207:9: warning: returning reference to local temporary object [-Wreturn-stack-address]
+        return epng::rgba_pixel();}
+               ^~~~~~~~~~~~~~~~~~
+2 warnings generated.
+
+
+Running tests...
+================================================================
+test_default_ctor . . . . . [1 pts] - passed
+test_ctor_1 . . . . . . . . [1 pts] - passed
+test_ctor_2 . . . . . . . . [2 pts] - passed
+test_build_tree_1 . . . . . [2 pts] - passed
+test_build_tree_2 . . . . . [1 pts] - passed
+test_build_tree_3 . . . . . [2 pts] - passed
+test_cctor_1  . . . . . . . [1 pts] - passed
+test_cctor_2  . . . . . . . [1 pts] - passed
+test_cctor_3  . . . . . . . [1 pts] - passed
+test_cctor_4  . . . . . . . [1 pts] - passed
+test_assign_op_1  . . . . . [1 pts] - passed
+test_assign_op_2  . . . . . [1 pts] - passed
+test_assign_op_3  . . . . . [1 pts] - passed
+test_assign_op_4  . . . . . [1 pts] - passed
+test_get_pixel_1  . . . . . [1 pts] - passed
+test_get_pixel_2  . . . . . [2 pts] - passed
+test_get_pixel_3  . . . . . [2 pts] - passed
+test_get_pixel_4  . . . . . [2 pts] - passed
+test_decompress_unpruned_1  [1 pts] - passed
+test_decompress_unpruned_2  [1 pts] - passed
+test_decompress_unpruned_3  [1 pts] - passed
+test_decompress_unpruned_4  [1 pts] - passed
+time_get_pixel_logn . . . . [4 pts] - passed
+time_decompress_n (asan)  . [4 pts] - FAILED
+valgrind_big3 (asan)  . . . [4 pts] - passed
+test_rotate_clockwise_1 . . [1 pts] - FAILED
+test_rotate_clockwise_2 . . [1 pts] - passed
+test_rotate_clockwise_3 . . [2 pts] - passed
+test_rotate_clockwise_4 . . [2 pts] - passed
+test_prune_1  . . . . . . . [2 pts] - passed
+test_prune_2  . . . . . . . [3 pts] - passed
+test_prune_3  . . . . . . . [2 pts] - passed
+test_prune_4  . . . . . . . [5 pts] - passed
+test_prune_copy . . . . . . [2 pts] - FAILED
+test_prune_rotate . . . . . [2 pts] - passed
+test_prune_get_pixel  . . . [3 pts] - passed
+test_pruned_size_1  . . . . [2 pts] - passed
+test_pruned_size_2  . . . . [2 pts] - passed
+test_pruned_size_3  . . . . [2 pts] - passed
+test_pruned_size_4  . . . . [2 pts] - passed
+test_pruned_size_5  . . . . [2 pts] - passed
+test_ideal_prune_1  . . . . [2 pts] - passed
+test_ideal_prune_2  . . . . [3 pts] - passed
+test_ideal_prune_3  . . . . [2 pts] - passed
+test_ideal_prune_4  . . . . [5 pts] - passed
+val_rotate_clockwise (asan) [2 pts] - passed
+val_prune (asan)  . . . . . [4 pts] - passed
+val_ideal_prune (asan)  . . [3 pts] - passed
+test_const_correctness  . . [4 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 93
+

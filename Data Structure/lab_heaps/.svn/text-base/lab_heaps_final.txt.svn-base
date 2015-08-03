@@ -1,0 +1,48 @@
+Monad Autograder
+Testing lab_heaps at 2014-07-13 20:42:39
+
+"We don't have time to stop for gas, we're already late." ~ Mike Cleron
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from unit_tests.cpp:11:
+In file included from include/heap.h:187:
+include/heap.tcc:99:23: warning: comparison of integers of different signs: 'int' and 'size_type' (aka 'unsigned long') [-Wsign-compare]
+    for (int i = 0; i < elems.size(); i++)
+                    ~ ^ ~~~~~~~~~~~~
+unit_tests.cpp:129:15: note: in instantiation of member function 'heap<int, std::__1::less<int> >::heap' requested here
+    heap<int> herp(vals);
+              ^
+1 warning generated.
+In file included from unit_tests.cpp:11:
+In file included from include/heap.h:187:
+include/heap.tcc:99:23: warning: comparison of integers of different signs: 'int' and 'size_type' (aka 'unsigned long') [-Wsign-compare]
+    for (int i = 0; i < elems.size(); i++)
+                    ~ ^ ~~~~~~~~~~~~
+unit_tests.cpp:129:15: note: in instantiation of member function 'heap<int, std::__1::less<int> >::heap' requested here
+    heap<int> herp(vals);
+              ^
+1 warning generated.
+
+
+Running tests...
+================================================================
+peek1  . . . [5 pts] - passed
+peek2  . . . [5 pts] - passed
+heapifyDown1 [9 pts] - passed
+heapifyDown2 [9 pts] - passed
+heapifyDown3 [9 pts] - passed
+heapifyDown4 [9 pts] - passed
+heapifyDown5 [9 pts] - passed
+buildHeap1 . [9 pts] - passed
+buildHeap2 . [9 pts] - passed
+buildHeap3 . [9 pts] - passed
+buildHeap4 . [9 pts] - passed
+buildHeap5 . [9 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

@@ -1,0 +1,116 @@
+Monad Autograder
+Testing mp_graph at 2014-08-06 23:56:02
+
+"Procrastination: working tomorrow for a better today." ~ Anonymous
+
+Setting up test environment...
+Compiling...
+================================================================
+src/maze.cpp:227:23: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+        else if (diff == -1)    
+                 ~~~~ ^  ~~
+1 warning generated.
+src/maze.cpp:227:23: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+        else if (diff == -1)    
+                 ~~~~ ^  ~~
+1 warning generated.
+
+
+Running tests...
+================================================================
+addElements1  . . . . . . . . . [1 pts] - passed
+addElements2  . . . . . . . . . [1 pts] - passed
+testFindAndSetUnion1  . . . . . [2 pts] - passed
+testFindAndSetUnion2  . . . . . [2 pts] - passed
+testFindAndSetUnion3  . . . . . [2 pts] - passed
+minWeight_OneEdge_ReturnValue . [1 pts] - passed
+minWeight_OneEdge_EdgeLabel . . [1 pts] - passed
+minWeight_MultiEdge_ReturnValue [2 pts] - passed
+minWeight_MultiEdge_EdgeLabels  [2 pts] - passed
+minPath_OneEdge_ReturnValue . . [1 pts] - passed
+minPath_OneEdge_EdgeLabel . . . [1 pts] - passed
+minPath_MultiEdge_ReturnValue . [2 pts] - passed
+minPath_MultiEdge_EdgeLabels  . [2 pts] - passed
+kruskal_all . . . . . . . . . . [5 pts] - passed
+testMakeSmallMaze . . . . . . . [5 pts] - passed
+testMakeMazeConnected . . . . . [5 pts] - passed
+testMakeMazeAcyclic . . . . . . [5 pts] - passed
+testMakeMazeTree500 . . . . . . [5 pts] - passed
+testMakeMazeRandom  . . . . . . [5 pts] - passed
+testSolveMazeValidPath  . . . . [5 pts] - FAILED: Segmentation fault
+testSolutionBottomRow . . . . . [5 pts] - FAILED: Segmentation fault
+testSolutionCorrectSquare . . . [5 pts] - FAILED: Segmentation fault
+testSolveMazeSmall  . . . . . . [5 pts] - FAILED: Segmentation fault
+testSolveMazeLarge  . . . . . . [5 pts] - FAILED: Segmentation fault
+testDrawMazeSmall . . . . . . . [5 pts] - passed
+testDrawMazeMed . . . . . . . . [5 pts] - passed
+testDrawMazeLarge . . . . . . . [5 pts] - passed
+testDrawSolutionMed . . . . . . [5 pts] - FAILED: Segmentation fault
+testDrawSolutionLarge . . . . . [5 pts] - FAILED: Segmentation fault
+
+
+Total score...
+================================================================
+TOTAL SCORE: 65
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testSolveMazeValidPath [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionBottomRow [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionCorrectSquare [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolveMazeSmall [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolveMazeLarge [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (45000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawSolutionMed [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawSolutionLarge [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (30000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 65
+
+
+The final score score of 65 was lower than the score of the previous run (100).  The score of the previous run will be used as the final grade.

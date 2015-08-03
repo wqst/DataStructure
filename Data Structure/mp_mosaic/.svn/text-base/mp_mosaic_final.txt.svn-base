@@ -1,0 +1,53 @@
+Monad Autograder
+Testing mp_mosaic at 2014-07-28 23:28:50
+
+"You didn't write that. I wrote that." ~ Matt Joras
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from unit_tests.cpp:513:
+./src/maptiles.cpp:25:23: warning: comparison of integers of different signs: 'int' and 'size_type' (aka 'unsigned long') [-Wsign-compare]
+    for (int i = 0; i < tiles.size(); i++)
+                    ~ ^ ~~~~~~~~~~~~
+1 warning generated.
+In file included from unit_tests.cpp:513:
+./src/maptiles.cpp:25:23: warning: comparison of integers of different signs: 'int' and 'size_type' (aka 'unsigned long') [-Wsign-compare]
+    for (int i = 0; i < tiles.size(); i++)
+                    ~ ^ ~~~~~~~~~~~~
+1 warning generated.
+
+
+Running tests...
+================================================================
+test_smaller_in_dimension  . . . [3 pts]  - passed
+test_should_replace  . . . . . . [3 pts]  - passed
+test_linear_ctor_1_10  . . . . . [4 pts]  - passed
+test_linear_ctor_3_31  . . . . . [4 pts]  - passed
+test_linear_ctor_2_14  . . . . . [4 pts]  - passed
+test_linear_nns_1_10 . . . . . . [4 pts]  - passed
+test_linear_nns_3_31 . . . . . . [4 pts]  - passed
+test_linear_nns_2_14 . . . . . . [4 pts]  - passed
+test_deceptive_nn_one_level_ctor [4 pts]  - passed
+test_deceptive_nn_one_level_nns  [3 pts]  - passed
+test_mines_ctor  . . . . . . . . [3 pts]  - passed
+test_mines_nns . . . . . . . . . [4 pts]  - passed
+test_deceptive_mines_ctor  . . . [3 pts]  - passed
+test_deceptive_mines_nns . . . . [5 pts]  - passed
+test_tie_breaking_ctor . . . . . [3 pts]  - passed
+test_tie_breaking_nns  . . . . . [3 pts]  - passed
+test_left_recurse_ctor . . . . . [3 pts]  - passed
+test_left_recurse_nns  . . . . . [3 pts]  - passed
+test_random_1_ctor . . . . . . . [3 pts]  - passed
+test_random_1_nns  . . . . . . . [3 pts]  - passed
+test_random_2_ctor . . . . . . . [3 pts]  - passed
+test_random_2_nns  . . . . . . . [3 pts]  - passed
+test_checkered_mosaic  . . . . . [12 pts] - passed
+test_primary_color_mosaic  . . . [6 pts]  - passed
+test_random_mosaic . . . . . . . [6 pts]  - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

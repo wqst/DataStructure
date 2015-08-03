@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/su14-cs225/!svn/ver/1874/hzhang91/lab_allocate/include
+END
+room.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/su14-cs225/!svn/ver/1683/hzhang91/lab_allocate/include/room.h
+END
+letter.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/su14-cs225/!svn/ver/1683/hzhang91/lab_allocate/include/letter.h
+END
+allocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/su14-cs225/!svn/ver/1874/hzhang91/lab_allocate/include/allocator.h
+END
+student_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/su14-cs225/!svn/ver/1683/hzhang91/lab_allocate/include/student_list.h
+END
+fileio.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/su14-cs225/!svn/ver/1683/hzhang91/lab_allocate/include/fileio.h
+END
+room_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/su14-cs225/!svn/ver/1683/hzhang91/lab_allocate/include/room_list.h
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/su14-cs225/!svn/ver/4980/hzhang91/lab_heaps/include
+END
+printheap.tcc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/su14-cs225/!svn/ver/4904/hzhang91/lab_heaps/include/printheap.tcc
+END
+printtree.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/su14-cs225/!svn/ver/4904/hzhang91/lab_heaps/include/printtree.h
+END
+heap.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/su14-cs225/!svn/ver/4904/hzhang91/lab_heaps/include/heap.h
+END
+coloredout.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/su14-cs225/!svn/ver/4904/hzhang91/lab_heaps/include/coloredout.h
+END
+heap.tcc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/su14-cs225/!svn/ver/4980/hzhang91/lab_heaps/include/heap.tcc
+END
+random.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/su14-cs225/!svn/ver/4904/hzhang91/lab_heaps/include/random.h
+END

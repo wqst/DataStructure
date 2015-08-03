@@ -1,0 +1,49 @@
+Monad Autograder
+Testing lab_quacks at 2014-07-07 08:10:05
+
+"If at first you don't succeed, that's one data point." ~ Randall Munroe
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+sum_digits_762  . . . [3 pts]  - passed
+sum_digits_0  . . . . [2 pts]  - passed
+sum_digits_2  . . . . [2 pts]  - passed
+sum_digits_1024 . . . [3 pts]  - passed
+triangle_0  . . . . . [2 pts]  - passed
+triangle_1  . . . . . [2 pts]  - passed
+triangle_5  . . . . . [3 pts]  - passed
+triangle_10 . . . . . [3 pts]  - passed
+sum_136 . . . . . . . [15 pts] - passed
+sum_floats  . . . . . [10 pts] - FAILED: unit_tests.cpp:93: Expected sum = 237.6; Actual = 234.000000
+scramble_17 . . . . . [15 pts] - passed
+scramble_10 . . . . . [15 pts] - passed
+verify_same_result  . [10 pts] - passed
+verify_same_no_modify [15 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 90
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+sum_floats [10 points]
+Result: FAILED: unit_tests.cpp:93: Expected sum = 237.6; Actual = 234.000000
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 90
+

@@ -1,0 +1,52 @@
+Monad Autograder
+Testing lab_trees at 2014-07-10 23:23:26
+
+"We are what we repeatedly do. Excellence, then, is not an act, but a habit." ~ Aristotle
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from unit_tests.cpp:9:
+In file included from include/binary_tree.h:220:
+include/binary_tree.tcc:208:53: warning: unsequenced modification and access to 'count' [-Wunsequenced]
+    int retVal = sumDistHelper(subRoot->left.get(), ++count) + sumDistHelper(subRoot->right.get(), count)+count;
+                                                    ^                                              ~~~~~
+include/binary_tree.tcc:199:12: note: in instantiation of member function 'binary_tree<int>::sumDistHelper' requested here
+    return sumDistHelper(root_.get(),count);
+           ^
+unit_tests.cpp:142:30: note: in instantiation of member function 'binary_tree<int>::sumDistances' requested here
+    ASSERT_EQUALS(19ul, tree.sumDistances());
+                             ^
+./proxy.h:318:62: note: expanded from macro 'ASSERT_EQUALS'
+                std::string errormsg = proxy::assert_equals_help(expected, actual, #expected, #actual);  \
+                                                                           ^
+1 warning generated.
+In file included from unit_tests.cpp:9:
+In file included from include/binary_tree.h:220:
+include/binary_tree.tcc:208:53: warning: unsequenced modification and access to 'count' [-Wunsequenced]
+    int retVal = sumDistHelper(subRoot->left.get(), ++count) + sumDistHelper(subRoot->right.get(), count)+count;
+                                                    ^                                              ~~~~~
+include/binary_tree.tcc:199:12: note: in instantiation of member function 'binary_tree<int>::sumDistHelper' requested here
+    return sumDistHelper(root_.get(),count);
+           ^
+unit_tests.cpp:142:30: note: in instantiation of member function 'binary_tree<int>::sumDistances' requested here
+    ASSERT_EQUALS(19ul, tree.sumDistances());
+                             ^
+./proxy.h:318:62: note: expanded from macro 'ASSERT_EQUALS'
+                std::string errormsg = proxy::assert_equals_help(expected, actual, #expected, #actual);  \
+                                                                           ^
+1 warning generated.
+
+
+Running tests...
+================================================================
+test_isOrdered  . [25 pts] - passed
+test_mirror . . . [25 pts] - passed
+test_printPaths . [25 pts] - passed
+test_sumDistances [25 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

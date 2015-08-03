@@ -1,0 +1,533 @@
+Monad Autograder
+Testing mp_memory at 2014-07-01 23:36:54
+
+"Hey Jude / Your make is bad / You should fix that / Compiler error / Remember / To let it search the root path / Then you can start / To make it better" ~ Ryan North
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+ptr_empty (asan)  . . . . . . . . [1 pts] - passed
+ptr_full (asan) . . . . . . . . . [1 pts] - passed
+ptr_clear (asan)  . . . . . . . . [1 pts] - passed
+ptr_deref_assign  . . . . . . . . [1 pts] - passed
+ptr_const_deref_signature . . . . [1 pts] - passed
+ptr_no_copy_construction  . . . . [1 pts] - passed
+ptr_no_copy_assignment  . . . . . [1 pts] - passed
+ptr_move_construction (asan)  . . [1 pts] - passed
+ptr_move_assignment (asan)  . . . [1 pts] - passed
+ptr_get (asan)  . . . . . . . . . [1 pts] - passed
+ptr_no_copies (asan)  . . . . . . [1 pts] - passed
+ptr_const_deref . . . . . . . . . [1 pts] - passed
+ptr_const_get . . . . . . . . . . [1 pts] - passed
+ptr_member_access . . . . . . . . [1 pts] - passed
+ptr_const_member_access . . . . . [1 pts] - passed
+ptr_swap (asan) . . . . . . . . . [1 pts] - passed
+array_empty (asan)  . . . . . . . [1 pts] - passed
+array_sized (asan)  . . . . . . . [1 pts] - passed
+array_sized_class_type (asan) . . [1 pts] - passed
+array_const_subscript . . . . . . [1 pts] - passed
+array_const_at  . . . . . . . . . [1 pts] - passed
+array_copy_construction (asan)  . [1 pts] - passed
+array_move_construction (asan)  . [1 pts] - passed
+array_copy_assignment (asan)  . . [1 pts] - passed
+array_move_assignment (asan)  . . [1 pts] - passed
+array_clear (asan)  . . . . . . . [1 pts] - passed
+array_swap (asan) . . . . . . . . [1 pts] - passed
+array_resize_smaller (asan) . . . [2 pts] - passed
+array_resize_larger (asan)  . . . [2 pts] - passed
+array_resize_zero (asan)  . . . . [2 pts] - FAILED: Memory errors detected by ASAN
+collage_emplace_valid . . . . . . [2 pts] - FAILED: unit_tests.cpp:558: Assertion (*c.at(1) == red) failed
+collage_emplace_invalid . . . . . [1 pts] - passed
+collage_at_assign . . . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_at_empty  . . . . . . . . [2 pts] - passed
+collage_at_invalid  . . . . . . . [2 pts] - passed
+collage_const_at  . . . . . . . . [1 pts] - passed
+collage_set_layers_larger (asan)  [3 pts] - FAILED: Memory errors detected by ASAN
+collage_set_layers_smaller (asan) [3 pts] - FAILED: Memory errors detected by ASAN
+collage_copy_constructor  . . . . [2 pts] - FAILED: Segmentation fault
+collage_copy_constructor_deep . . [2 pts] - FAILED: Segmentation fault
+collage_move_ctor_1 . . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_move_ctor_2 (asan)  . . . [3 pts] - FAILED: Memory errors detected by ASAN
+collage_copy_assign . . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_copy_assign_deep  . . . . [2 pts] - FAILED: Segmentation fault
+collage_move_assign_1 . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_move_assign_2 . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_swap  . . . . . . . . . . [2 pts] - passed
+collage_change_layer  . . . . . . [2 pts] - FAILED: Aborted
+collage_change_layer_invalid  . . [1 pts] - FAILED: unit_tests.cpp:817: Assertion (*c.at(1) == red) failed
+collage_draw_1  . . . . . . . . . [2 pts] - FAILED: Aborted
+collage_draw_2  . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_draw_3  . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_draw_4  . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+collage_draw_change_layer . . . . [2 pts] - FAILED: Segmentation fault
+collage_draw_erase_picture  . . . [2 pts] - FAILED: Aborted
+collage_draw_position_1 . . . . . [2 pts] - FAILED: Aborted
+collage_draw_position_2 . . . . . [2 pts] - FAILED: Aborted
+collage_position_invalid_1  . . . [2 pts] - passed
+collage_position_invalid_2  . . . [2 pts] - passed
+collage_erase_invalid . . . . . . [2 pts] - passed
+collage_memory_safety_1 (asan)  . [3 pts] - FAILED: Memory errors detected by ASAN
+collage_memory_safety_2 (asan)  . [4 pts] - FAILED: Memory errors detected by ASAN
+
+
+Total score...
+================================================================
+TOTAL SCORE: 45
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+array_resize_zero (run under asan) [2 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (1000ms timeout)
+Output:
+----------------------------------------------------------------
+Running array_resize_zero [worth 2 points, output below]
+
+=================================================================
+==532==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x45735e in operator new[](unsigned long) /class/cs225/llvm/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:54
+    #1 0x6e9076 in cs225::scoped_array<int>::resize(unsigned long) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6e9076)
+    #2 0x688991 in proxy_test::array_resize_zero(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x688991)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+
+SUMMARY: AddressSanitizer: 1 byte(s) leaked in 1 allocation(s).
+Result: FAILED:
+Memory Leaks Detected by ASAN
+
+----------------------------------------------------------------
+collage_emplace_valid [2 points]
+Result: FAILED: unit_tests.cpp:558: Assertion (*c.at(1) == red) failed
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_at_assign [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_set_layers_larger (run under asan) [3 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running collage_set_layers_larger [worth 3 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==544==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x00000070b40a sp 0x7fff7d282480 bp 0x7fff7d282a90 T0)
+    #0 0x70b409 in epng::png::png(epng::png const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x70b409)
+    #1 0x6fdcd6 in cs225::collage::layers(unsigned long) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6fdcd6)
+    #2 0x698637 in proxy_test::collage_set_layers_larger(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x698637)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+    #12 0x46cca8 in _start (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x46cca8)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ??:0 epng::png::png(epng::png const&)
+==544==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+collage_set_layers_smaller (run under asan) [3 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running collage_set_layers_smaller [worth 3 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==549==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x00000070b40a sp 0x7fff9fdb6fc0 bp 0x7fff9fdb75d0 T0)
+    #0 0x70b409 in epng::png::png(epng::png const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x70b409)
+    #1 0x6fdcd6 in cs225::collage::layers(unsigned long) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6fdcd6)
+    #2 0x69b5a6 in proxy_test::collage_set_layers_smaller(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x69b5a6)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+    #12 0x46cca8 in _start (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x46cca8)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ??:0 epng::png::png(epng::png const&)
+==549==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+collage_copy_constructor [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_copy_constructor_deep [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_move_ctor_1 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_move_ctor_2 (run under asan) [3 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running collage_move_ctor_2 [worth 3 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==557==ERROR: AddressSanitizer: SEGV on unknown address 0x00009fff8000 (pc 0x0000007031fb sp 0x7fff81f646c0 bp 0x7fff81f64790 T0)
+    #0 0x7031fa in cs225::scoped_array<cs225::scoped_ptr<epng::png> >::size() const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x7031fa)
+    #1 0x6f8c13 in cs225::collage::collage(cs225::collage&&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6f8c13)
+    #2 0x6a5825 in proxy_test::collage_move_ctor_2(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6a5825)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+    #12 0x46cca8 in _start (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x46cca8)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ??:0 cs225::scoped_array<cs225::scoped_ptr<epng::png> >::size() const
+==557==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+collage_copy_assign [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_copy_assign_deep [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_move_assign_1 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_move_assign_2 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_change_layer [2 points]
+Result: FAILED: Aborted
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+*** glibc detected *** ./proxy: double free or corruption (fasttop): 0x0000000001c85210 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a26a76166]
+./proxy[0x412855]
+./proxy[0x464d03]
+./proxy[0x464b91]
+./proxy[0x464c2a]
+./proxy[0x46447a]
+./proxy[0x4580ae]
+./proxy[0x41413d]
+./proxy[0x410239]
+./proxy[0x40df47]
+./proxy[0x413f12]
+./proxy[0x40f711]
+./proxy[0x40c505]
+./proxy[0x40bcfb]
+./proxy[0x40b4d9]
+./proxy[0x40afba]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a26a1ed1d]
+./proxy[0x409bf9]
+======= Memory map: ========
+00400000-004bb000 r-xp 00000000 00:10 207999546                          /dev/shm/geigle1/su14/monad/mp_memory_grade/proxy
+006bb000-006bd000 rw-p 000bb000 00:10 207999546                          /dev/shm/geigle1/su14/monad/mp_memory_grade/proxy
+01c83000-01ca4000 rw-p 00000000 00:00 0                                  [heap]
+3a26200000-3a26220000 r-xp 00000000 fd:00 394848                         /lib64/ld-2.12.so
+3a2641f000-3a26420000 r--p 0001f000 fd:00 394848                         /lib64/ld-2.12.so
+3a26420000-3a26421000 rw-p 00020000 fd:00 394848                         /lib64/ld-2.12.so
+3a26421000-3a26422000 rw-p 00000000 00:00 0 
+3a26600000-3a26683000 r-xp 00000000 fd:00 394865                         /lib64/libm-2.12.so
+3a26683000-3a26882000 ---p 00083000 fd:00 394865                         /lib64/libm-2.12.so
+3a26882000-3a26883000 r--p 00082000 fd:00 394865                         /lib64/libm-2.12.so
+3a26883000-3a26884000 rw-p 00083000 fd:00 394865                         /lib64/libm-2.12.so
+3a26a00000-3a26b8b000 r-xp 00000000 fd:00 395093                         /lib64/libc-2.12.so
+3a26b8b000-3a26d8a000 ---p 0018b000 fd:00 395093                         /lib64/libc-2.12.so
+3a26d8a000-3a26d8e000 r--p 0018a000 fd:00 395093                         /lib64/libc-2.12.so
+3a26d8e000-3a26d8f000 rw-p 0018e000 fd:00 395093                         /lib64/libc-2.12.so
+3a26d8f000-3a26d94000 rw-p 00000000 00:00 0 
+3a26e00000-3a26e17000 r-xp 00000000 fd:00 395094                         /lib64/libpthread-2.12.so
+3a26e17000-3a27017000 ---p 00017000 fd:00 395094                         /lib64/libpthread-2.12.so
+3a27017000-3a27018000 r--p 00017000 fd:00 395094                         /lib64/libpthread-2.12.so
+3a27018000-3a27019000 rw-p 00018000 fd:00 395094                         /lib64/libpthread-2.12.so
+3a27019000-3a2701d000 rw-p 00000000 00:00 0 
+3a27200000-3a27202000 r-xp 00000000 fd:00 395096                         /lib64/libdl-2.12.so
+3a27202000-3a27402000 ---p 00002000 fd:00 395096                         /lib64/libdl-2.12.so
+3a27402000-3a27403000 r--p 00002000 fd:00 395096                         /lib64/libdl-2.12.so
+3a27403000-3a27404000 rw-p 00003000 fd:00 395096                         /lib64/libdl-2.12.so
+3a27600000-3a27615000 r-xp 00000000 fd:00 395095                         /lib64/libz.so.1.2.3
+3a27615000-3a27814000 ---p 00015000 fd:00 395095                         /lib64/libz.so.1.2.3
+3a27814000-3a27815000 r--p 00014000 fd:00 395095                         /lib64/libz.so.1.2.3
+3a27815000-3a27816000 rw-p 00015000 fd:00 395095                         /lib64/libz.so.1.2.3
+3a27a00000-3a27a07000 r-xp 00000000 fd:00 395097                         /lib64/librt-2.12.so
+3a27a07000-3a27c06000 ---p 00007000 fd:00 395097                         /lib64/librt-2.12.so
+3a27c06000-3a27c07000 r--p 00006000 fd:00 395097                         /lib64/librt-2.12.so
+3a27c07000-3a27c08000 rw-p 00007000 fd:00 395097                         /lib64/librt-2.12.so
+3a2ae00000-3a2ae25000 r-xp 00000000 fd:00 801232                         /usr/lib64/libpng12.so.0.49.0
+3a2ae25000-3a2b025000 ---p 00025000 fd:00 801232                         /usr/lib64/libpng12.so.0.49.0
+3a2b025000-3a2b026000 rw-p 00025000 fd:00 801232                         /usr/lib64/libpng12.so.0.49.0
+3a2ce00000-3a2ce16000 r-xp 00000000 fd:00 395099                         /lib64/libgcc_s-4.4.7-20120601.so.1
+3a2ce16000-3a2d015000 ---p 00016000 fd:00 395099                         /lib64/libgcc_s-4.4.7-20120601.so.1
+3a2d015000-3a2d016000 rw-p 00015000 fd:00 395099                         /lib64/libgcc_s-4.4.7-20120601.so.1
+7ffe6cf8e000-7ffe6cf93000 rw-p 00000000 00:00 0 
+7ffe6cf93000-7ffe6d094000 r-xp 00000000 00:27 20845127                   /class/cs225/llvm/lib/libc++.so.1.0
+7ffe6d094000-7ffe6d293000 ---p 00101000 00:27 20845127                   /class/cs225/llvm/lib/libc++.so.1.0
+7ffe6d293000-7ffe6d29a000 rw-p 00100000 00:27 20845127                   /class/cs225/llvm/lib/libc++.so.1.0
+7ffe6d29a000-7ffe6d29e000 rw-p 00000000 00:00 0 
+7ffe6d2c2000-7ffe6d2c3000 rw-p 00000000 00:00 0 
+7ffe6d2c3000-7ffe6d2c5000 rw-p 00000000 00:00 0 
+7fffe417c000-7fffe4191000 rw-p 00000000 00:00 0                          [stack]
+7fffe41ff000-7fffe4200000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+collage_change_layer_invalid [1 points]
+Result: FAILED: unit_tests.cpp:817: Assertion (*c.at(1) == red) failed
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_draw_1 [2 points]
+Result: FAILED: Aborted
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
+
+----------------------------------------------------------------
+collage_draw_2 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_draw_3 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_draw_4 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_draw_change_layer [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+collage_draw_erase_picture [2 points]
+Result: FAILED: Aborted
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
+
+----------------------------------------------------------------
+collage_draw_position_1 [2 points]
+Result: FAILED: Aborted
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
+
+----------------------------------------------------------------
+collage_draw_position_2 [2 points]
+Result: FAILED: Aborted
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
+
+----------------------------------------------------------------
+collage_memory_safety_1 (run under asan) [3 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running collage_memory_safety_1 [worth 3 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==580==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x00000070b40a sp 0x7fffda765a00 bp 0x7fffda766010 T0)
+    #0 0x70b409 in epng::png::png(epng::png const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x70b409)
+    #1 0x6f8296 in cs225::collage::collage(cs225::collage const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6f8296)
+    #2 0x6d72a2 in proxy_test::collage_memory_safety_1(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6d72a2)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+    #12 0x46cca8 in _start (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x46cca8)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ??:0 epng::png::png(epng::png const&)
+==580==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+collage_memory_safety_2 (run under asan) [4 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running collage_memory_safety_2 [worth 4 points, output below]
+=================================================================
+==585==ERROR: AddressSanitizer: heap-use-after-free on address 0x60300000ee90 at pc 0x70cc20 bp 0x7fff9bc2ecf0 sp 0x7fff9bc2ece8
+READ of size 8 at 0x60300000ee90 thread T0
+    #0 0x70cc1f in epng::png::swap(epng::png&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x70cc1f)
+    #1 0x70c592 in epng::png::operator=(epng::png) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x70c592)
+    #2 0x6d9d9a in proxy_test::collage_memory_safety_2(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6d9d9a)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+    #12 0x46cca8 in _start (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x46cca8)
+
+0x60300000ee90 is located 0 bytes inside of 24-byte region [0x60300000ee90,0x60300000eea8)
+freed by thread T0 here:
+    #0 0x45759e in operator delete(void*) /class/cs225/llvm/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:83
+    #1 0x4ac397 in operator delete(void*, unsigned long) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4ac397)
+    #2 0x7000f1 in cs225::collage::emplace_picture(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long, unsigned long, unsigned long) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x7000f1)
+    #3 0x6d9cfd in proxy_test::collage_memory_safety_2(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6d9cfd)
+    #4 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #5 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #6 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #7 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #8 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #9 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #10 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #11 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #12 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+
+previously allocated by thread T0 here:
+    #0 0x45729e in operator new(unsigned long) /class/cs225/llvm/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:52
+    #1 0x6fff4a in cs225::collage::emplace_picture(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long, unsigned long, unsigned long) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6fff4a)
+    #2 0x6d9cfd in proxy_test::collage_memory_safety_2(util::sizedpipestream<512ul>&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x6d9cfd)
+    #3 0x4b899b in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x4b899b)
+    #4 0x49bf39 in proxy::test_execution::child_test() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x49bf39)
+    #5 0x48afab in proxy::test_execution::child() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x48afab)
+    #6 0x484ce5 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x484ce5)
+    #7 0x47ced8 in proxy::RunTests::run_single_test(char const*) (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47ced8)
+    #8 0x47bf51 in proxy::RunTests::execute_by_mode() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47bf51)
+    #9 0x477b4c in proxy::RunTests::execute() (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x477b4c)
+    #10 0x47576a in main (/dev/shm/geigle1/su14/monad/mp_memory_grade/proxy-asan+0x47576a)
+    #11 0x3a26a1ed1c in __libc_start_main (/lib64/libc.so.6+0x3a26a1ed1c)
+
+SUMMARY: AddressSanitizer: heap-use-after-free ??:0 epng::png::swap(epng::png&)
+Shadow bytes around the buggy address:
+  0x0c067fff9d80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c067fff9d90: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c067fff9da0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c067fff9db0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c067fff9dc0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+=>0x0c067fff9dd0: fa fa[fd]fd fd fa fa fa fd fd fd fa fa fa 00 00
+  0x0c067fff9de0: 00 fa fa fa fd fd fd fd fa fa fd fd fd fd fa fa
+  0x0c067fff9df0: 00 00 00 fa fa fa fd fd fd fd fa fa 00 00 00 fa
+  0x0c067fff9e00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c067fff9e10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c067fff9e20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:     fa
+  Heap right redzone:    fb
+  Freed heap region:     fd
+  Stack left redzone:    f1
+  Stack mid redzone:     f2
+  Stack right redzone:   f3
+  Stack partial redzone: f4
+  Stack after return:    f5
+  Stack use after scope: f8
+  Global redzone:        f9
+  Global init order:     f6
+  Poisoned by user:      f7
+  ASan internal:         fe
+==585==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 45
+

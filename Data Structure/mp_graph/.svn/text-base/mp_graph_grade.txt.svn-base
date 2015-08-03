@@ -1,0 +1,55 @@
+Monad Autograder
+Testing mp_graph at 2014-08-05 23:57:29
+
+"You think the sky is like a big big plate." ~ Prof. Jiawei Han
+
+Setting up test environment...
+Compiling...
+================================================================
+src/maze.cpp:258:23: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+        else if (diff == -1)    
+                 ~~~~ ^  ~~
+1 warning generated.
+src/maze.cpp:258:23: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+        else if (diff == -1)    
+                 ~~~~ ^  ~~
+1 warning generated.
+
+
+Running tests...
+================================================================
+addElements1  . . . . . . . . . [1 pts] - passed
+addElements2  . . . . . . . . . [1 pts] - passed
+testFindAndSetUnion1  . . . . . [2 pts] - passed
+testFindAndSetUnion2  . . . . . [2 pts] - passed
+testFindAndSetUnion3  . . . . . [2 pts] - passed
+minWeight_OneEdge_ReturnValue . [1 pts] - passed
+minWeight_OneEdge_EdgeLabel . . [1 pts] - passed
+minWeight_MultiEdge_ReturnValue [2 pts] - passed
+minWeight_MultiEdge_EdgeLabels  [2 pts] - passed
+minPath_OneEdge_ReturnValue . . [1 pts] - passed
+minPath_OneEdge_EdgeLabel . . . [1 pts] - passed
+minPath_MultiEdge_ReturnValue . [2 pts] - passed
+minPath_MultiEdge_EdgeLabels  . [2 pts] - passed
+kruskal_all . . . . . . . . . . [5 pts] - passed
+testMakeSmallMaze . . . . . . . [5 pts] - passed
+testMakeMazeConnected . . . . . [5 pts] - passed
+testMakeMazeAcyclic . . . . . . [5 pts] - passed
+testMakeMazeTree500 . . . . . . [5 pts] - passed
+testMakeMazeRandom  . . . . . . [5 pts] - passed
+testSolveMazeValidPath  . . . . [5 pts] - passed
+testSolutionBottomRow . . . . . [5 pts] - passed
+testSolutionCorrectSquare . . . [5 pts] - passed
+testSolveMazeSmall  . . . . . . [5 pts] - passed
+testSolveMazeLarge  . . . . . . [5 pts] - passed
+testDrawMazeSmall . . . . . . . [5 pts] - passed
+testDrawMazeMed . . . . . . . . [5 pts] - passed
+testDrawMazeLarge . . . . . . . [5 pts] - passed
+testDrawSolutionMed . . . . . . [5 pts] - passed
+testDrawSolutionLarge . . . . . [5 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

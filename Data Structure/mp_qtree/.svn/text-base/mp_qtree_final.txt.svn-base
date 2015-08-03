@@ -1,0 +1,138 @@
+Monad Autograder
+Testing mp_qtree at 2014-07-21 23:39:35
+
+"Rejoice!" ~ Kotomine Kirei
+
+Setting up test environment...
+Compiling...
+================================================================
+src/quadtree.cpp:194:11: warning: returning reference to local temporary object [-Wreturn-stack-address]
+                        return epng::rgba_pixel();}
+                               ^~~~~~~~~~~~~~~~~~
+src/quadtree.cpp:207:9: warning: returning reference to local temporary object [-Wreturn-stack-address]
+        return epng::rgba_pixel();}
+               ^~~~~~~~~~~~~~~~~~
+2 warnings generated.
+src/quadtree.cpp:194:11: warning: returning reference to local temporary object [-Wreturn-stack-address]
+                        return epng::rgba_pixel();}
+                               ^~~~~~~~~~~~~~~~~~
+src/quadtree.cpp:207:9: warning: returning reference to local temporary object [-Wreturn-stack-address]
+        return epng::rgba_pixel();}
+               ^~~~~~~~~~~~~~~~~~
+2 warnings generated.
+
+
+Running tests...
+================================================================
+test_default_ctor . . . . . [1 pts] - passed
+test_ctor_1 . . . . . . . . [1 pts] - passed
+test_ctor_2 . . . . . . . . [2 pts] - passed
+test_build_tree_1 . . . . . [2 pts] - passed
+test_build_tree_2 . . . . . [1 pts] - passed
+test_build_tree_3 . . . . . [2 pts] - passed
+test_cctor_1  . . . . . . . [1 pts] - passed
+test_cctor_2  . . . . . . . [1 pts] - passed
+test_cctor_3  . . . . . . . [1 pts] - passed
+test_cctor_4  . . . . . . . [1 pts] - passed
+test_assign_op_1  . . . . . [1 pts] - passed
+test_assign_op_2  . . . . . [1 pts] - passed
+test_assign_op_3  . . . . . [1 pts] - passed
+test_assign_op_4  . . . . . [1 pts] - passed
+test_get_pixel_1  . . . . . [1 pts] - passed
+test_get_pixel_2  . . . . . [2 pts] - passed
+test_get_pixel_3  . . . . . [2 pts] - passed
+test_get_pixel_4  . . . . . [2 pts] - passed
+test_decompress_unpruned_1  [1 pts] - passed
+test_decompress_unpruned_2  [1 pts] - passed
+test_decompress_unpruned_3  [1 pts] - passed
+test_decompress_unpruned_4  [1 pts] - passed
+time_get_pixel_logn . . . . [4 pts] - passed
+time_decompress_n (asan)  . [4 pts] - FAILED: unit_tests.cpp:310: Runtime was larger than O(n)
+valgrind_big3 (asan)  . . . [4 pts] - passed
+test_rotate_clockwise_1 . . [1 pts] - FAILED: Segmentation fault
+test_rotate_clockwise_2 . . [1 pts] - passed
+test_rotate_clockwise_3 . . [2 pts] - passed
+test_rotate_clockwise_4 . . [2 pts] - passed
+test_prune_1  . . . . . . . [2 pts] - passed
+test_prune_2  . . . . . . . [3 pts] - passed
+test_prune_3  . . . . . . . [2 pts] - passed
+test_prune_4  . . . . . . . [5 pts] - passed
+test_prune_copy . . . . . . [2 pts] - FAILED: unit_tests.cpp:409: Assertion (first == second) failed
+test_prune_rotate . . . . . [2 pts] - passed
+test_prune_get_pixel  . . . [3 pts] - passed
+test_pruned_size_1  . . . . [2 pts] - passed
+test_pruned_size_2  . . . . [2 pts] - passed
+test_pruned_size_3  . . . . [2 pts] - passed
+test_pruned_size_4  . . . . [2 pts] - passed
+test_pruned_size_5  . . . . [2 pts] - passed
+test_ideal_prune_1  . . . . [2 pts] - passed
+test_ideal_prune_2  . . . . [3 pts] - passed
+test_ideal_prune_3  . . . . [2 pts] - passed
+test_ideal_prune_4  . . . . [5 pts] - passed
+val_rotate_clockwise (asan) [2 pts] - passed
+val_prune (asan)  . . . . . [4 pts] - passed
+val_ideal_prune (asan)  . . [3 pts] - passed
+test_const_correctness  . . [4 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 93
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+time_decompress_n (run under asan) [4 points]
+Result: FAILED: unit_tests.cpp:310: Runtime was larger than O(n)
+Took unknown time (120000ms timeout)
+Output:
+----------------------------------------------------------------
+Running time_decompress_n [worth 4 points, output below]
+Input size 256: 1000 iterations in 739 ms for an average of 739.618 us per call
+Input size 1024: 274 iterations in 924 ms for an average of 3373.19 us per call
+Input size 4096: 68 iterations in 1002 ms for an average of 14749.6 us per call
+Input size 16384: 17 iterations in 1108 ms for an average of 65181.7 us per call
+Input size 65536: 5 iterations in 1454 ms for an average of 290817 us per call
+Fitting time: O(1)
+RMS Residual: 123842
+Fitting time: O(logn)
+RMS Residual: 62828
+Fitting time: O(n)
+RMS Residual: 2699.46
+Fitting time: O(nlogn)
+RMS Residual: 532.75
+Fitting time: O(n^2)
+RMS Residual: 16851.9
+Fitting time: O(n^3)
+RMS Residual: 21688.8
+Fitting time: O(e^n)
+RMS Residual: -nan
+Fitting time: O(never)
+RMS Residual: -nan
+Detected best time: O(nlogn)
+Best RMS Residual: 532.75
+Result: FAILED:
+unit_tests.cpp:310: Runtime was larger than O(n)
+
+----------------------------------------------------------------
+test_rotate_clockwise_1 [1 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_prune_copy [2 points]
+Result: FAILED: unit_tests.cpp:409: Assertion (first == second) failed
+Took 427ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 93
+

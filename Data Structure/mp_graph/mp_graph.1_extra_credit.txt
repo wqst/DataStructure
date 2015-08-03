@@ -1,0 +1,23 @@
+Monad Autograder
+Testing mp_graph.1 at 2014-07-31 23:22:26
+
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1 . . . . [20 pts] - passed
+addElements2 . . . . [20 pts] - passed
+testFindAndSetUnion1 [20 pts] - passed
+testFindAndSetUnion2 [20 pts] - passed
+testFindAndSetUnion3 [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

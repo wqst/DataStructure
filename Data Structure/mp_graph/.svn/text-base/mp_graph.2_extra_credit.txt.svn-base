@@ -1,0 +1,27 @@
+Monad Autograder
+Testing mp_graph.2 at 2014-08-03 23:24:28
+
+"You look at their elbows, they actually have many good theoretical elbows." ~ Prof. Jiawei Han
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+minWeight_OneEdge_ReturnValue . [10 pts] - passed
+minWeight_OneEdge_EdgeLabel . . [10 pts] - passed
+minWeight_MultiEdge_ReturnValue [11 pts] - passed
+minWeight_MultiEdge_EdgeLabels  [11 pts] - passed
+minPath_OneEdge_ReturnValue . . [10 pts] - passed
+minPath_OneEdge_EdgeLabel . . . [10 pts] - passed
+minPath_MultiEdge_ReturnValue . [11 pts] - passed
+minPath_MultiEdge_EdgeLabels  . [11 pts] - passed
+kruskal_all . . . . . . . . . . [16 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

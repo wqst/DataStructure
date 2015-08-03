@@ -1,0 +1,34 @@
+Monad Autograder
+Testing lab_inheritance at 2014-07-07 04:14:54
+
+"I can calculate the motions of the heavenly bodies, but not the madness of people." ~ Isaac Newton
+
+Setting up test environment...
+Compiling...
+================================================================
+src/circle.cpp:20:7: warning: field 'radius_' will be initialized after base 'Shape' [-Wreorder]
+    : radius_{pradius},Shape(pcenter,pcolor)
+      ^
+1 warning generated.
+src/circle.cpp:20:7: warning: field 'radius_' will be initialized after base 'Shape' [-Wreorder]
+    : radius_{pradius},Shape(pcenter,pcolor)
+      ^
+1 warning generated.
+
+
+Running tests...
+================================================================
+test_virtual_perim  . . . . . . [5 pts]  - passed
+test_virtual_area . . . . . . . [5 pts]  - passed
+test_destructor (asan)  . . . . [20 pts] - passed
+test_constructor  . . . . . . . [20 pts] - passed
+test_drawable_destructor (asan) [10 pts] - passed
+test_truck_draw . . . . . . . . [10 pts] - passed
+test_slicing  . . . . . . . . . [20 pts] - passed
+test_flower_destructor (asan) . [10 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
